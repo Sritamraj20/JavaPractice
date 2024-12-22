@@ -13,6 +13,11 @@ public class SDETPractice {
 
     public static void main(String args[]) throws IOException, AWTException {
 
+        int arr[]={2, 6, -3, -10, 0, 2};
+
+
+
+
 
 
 
