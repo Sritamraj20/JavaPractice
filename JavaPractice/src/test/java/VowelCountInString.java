@@ -16,7 +16,6 @@ public class VowelCountInString {
 //                int count= hmap.get(name.charAt(i));
 //            }
 //        }
-        {
             String str = "google";
 //HashMap char as a key and occurrence as a value
             HashMap<Character, Integer> charCount = new HashMap<>();
@@ -29,8 +28,6 @@ public class VowelCountInString {
                 }
             }
             System.out.println(charCount);
-        }
-
         }
 }
 
