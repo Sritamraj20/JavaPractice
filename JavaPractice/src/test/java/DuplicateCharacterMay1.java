@@ -1,7 +1,7 @@
 public class DuplicateCharacterMay1 {
     public static void main(String[] args) {
 
-        String str = "javatjava";
+        String str = "FIRSTADVANTAGE";
 
         char arr[]=str.toCharArray();
 
@@ -16,7 +16,7 @@ public class DuplicateCharacterMay1 {
                 }
             }
             if(count>1 && arr[i]!=0){
-                System.out.println(arr[i]);
+                System.out.println("Number of duplicate element: "+arr[i]+" is "+count);
             }
         }
 
