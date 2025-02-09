@@ -26,3 +26,21 @@ public class BalancedParanthesisInString {
         }
     }
 }
+
+//String str="((()))";
+//Stack<String> st=new Stack<>();
+//
+//        for(int i=0;i<str.length();i++){
+//        if(Character.toString(str.charAt(i)).equals("(")){
+//        st.push(Character.toString(str.charAt(i)));
+//        }else {
+//        if(Character.toString(str.charAt(i)).equals(")") && !st.isEmpty()){
+//        st.pop();
+//                }
+//                        }
+//                        }
+//                        if(st.isEmpty()){
+//        System.out.println("balanced string");
+//        }else {
+//                System.out.println("unbalanced");
+//        }
