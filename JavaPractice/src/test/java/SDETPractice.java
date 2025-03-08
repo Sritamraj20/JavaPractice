@@ -4,57 +4,47 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellAddress;
 import org.apache.poi.ss.util.CellRangeAddress;
 
+import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Array;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.util.function.BiFunction;
-import java.util.function.Function;
-import java.util.function.Predicate;
+import java.util.function.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class SDETPractice{
+
     public static void main(String[] args) throws IOException {
 
-        String str="aabbbcccc";
-        HashMap<Character,Integer> hmap=new HashMap<>();
+        String str="geeksforgeeks";
 
+
+        int maxs=0;
+        int count=0;
         for(int i=0;i<str.length();i++){
-            if(hmap.containsKey(str.charAt(i))){
-                int count=hmap.get(str.charAt(i));
-                hmap.put(str.charAt(i),++count);
-            }else {
-                hmap.put(str.charAt(i),1);
-            }
-        }
-        System.out.println(hmap);
+            Set<Character> se = new LinkedHashSet<>();
+            count=0;
+            for(int j=i;j<str.length();j++) {
 
-        Iterator<Integer> itr=hmap.values().iterator();
-
-        int max=0;
-        int seocndMax=0;
-        while(itr.hasNext()){
-            int a= itr.next();
-            if(a>max){
-                seocndMax=max;
-                max=a;
-            } else if (a>seocndMax && a<max) {
-                seocndMax=a;
+                if (se.contains(str.charAt(j))) {
+                    //count++;
+                    maxs=Math.max(maxs,count);
+                    break;
+                } else {
+                    se.add(str.charAt(j));
+                    count++;
+                }
             }
-        }
-        System.out.println(seocndMax);
 
-        for(Map.Entry<Character,Integer> map:hmap.entrySet()){
-            if(seocndMax==map.getValue()){
-                System.out.println(map.getKey());
-            }
+            System.out.println(se);
         }
 
-
-
-
+        System.out.println(maxs);
 
 
 
